@@ -22,7 +22,7 @@ window.config(background='#faf8ef')
 
 #################################### les variables
 '''
-    Ici contrairement au programme fait pour l'affichage sur le terminale, 
+    Ici contrairement au programme fait pour l'affichage sur le terminal.
     Nous allons créer plus de variables pour les appeler ensuite dans les fonctions, au lieu 
     d'encombrer les arguments des fonctions. 
 
