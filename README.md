@@ -29,7 +29,7 @@ Pour lancer sur l'interface grafique:
 # Règles du jeu
 
 Pour le jeu sur le terminal:
-- Utilisez les touches z='haut', q='gauche', s='sud', d='droite' pour déplacer les valeurs de la matice afficher, afin que deux valeurs portant le même montant se percutent et fuisonnent en un, dont le montant est égal à la somme des deux précédents jusqu'à atteindre le but ultime, le nombre 2048 dans la matrice.  
+- Utilisez les touches z='haut', q='gauche', s='bas', d='droite' pour déplacer les valeurs de la matice afficher, afin que deux valeurs portant le même montant se percutent et fuisonnent en un, dont le montant est égal à la somme des deux précédents jusqu'à atteindre le but ultime, le nombre 2048 dans la matrice.  
 
 
 Pour le jeu sur l'interface graphique:
