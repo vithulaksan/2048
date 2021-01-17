@@ -9,20 +9,20 @@ v=0
 
 ######################################################### choix du mode
 '''
-    La fonction choixmode sera celle qui sera appelle en premier au lancement du jeu elle va permettre de choisir le mode de jeu 
+    La fonction choixmode sera celle qui sera appellée en premier au lancement du jeu, elle va permettre de choisir le mode de jeu 
 '''
 def choixmode() :
     '''
-        La fonction nous demande de chosir le mode à laquelle nous voulons jouer.
+        La fonction nous demande de chosir le mode auquel nous voulons jouer.
         Si nous choisissons entre 1 et 3, elle renvoie vers le mode qui correspond sinon elle nous redemande de chosir le mode.
-        Si nous avons choisit 1, nous créons un variable n qui vaut 4 et nous renvoie vers la fonction 'debut_game(n)'. 
-        Si nous avons choisit 2, nous créons un variable n qui vaut 5 et nous renvoie vers la fonction 'debut_game(n).
-        Si nous avons choisit 3, nous allons chercher la dernière ligne du fichier 'tablo_memoire.txt', 
+        Si nous avons choisi 1, nous créons une variable n qui vaut 4 et nous renvoie vers la fonction 'debut_game(n)'. 
+        Si nous avons choisi 2, nous créons une variable n qui vaut 5 et nous renvoie vers la fonction 'debut_game(n).
+        Si nous avons choisi 3, nous allons chercher la dernière ligne du fichier 'tablo_memoire.txt', 
         ceci va nous permettre de retrouver:
         - la valeur de n, qui va nous permettre de savoir la taille du tableau.
         - la valeur de v. 
-        - la valeur du score de la  partie enregistrer.
-        - le tableau de la partie enregistrer.
+        - la valeur du score de la partie enregistrée.
+        - le tableau de la partie enregistrée.
     '''
     global score
     global v
@@ -59,7 +59,7 @@ def choixmode() :
         return(direction(n,tablo))
 #############################################  mode 3 (transformer le txt en liste)
 '''
-    La fonction 'read_file' est un élément important pour importer le dernier tableau enregistrer dans un fichier et aussi pour trouver le meilleur score .   
+    La fonction 'read_file' est un élément important pour importer le dernier tableau enregistré dans un fichier et aussi pour trouver le meilleur score .   
 '''
 def read_file(filename):
     '''
@@ -146,7 +146,7 @@ def affichage(n,tablo):
 
 #################################### ajouter apres chaque deplacement
 '''
-    La fonction 'ajout' va être utilisé après chaque déplacement pour mettre une valeur dans le tableau,
+    La fonction 'ajout' va être utilisée après chaque déplacement pour mettre une valeur dans le tableau,
     et au début de chaque partie pour mettre 2 valeurs au tableau vide.
 '''
 def ajout(tablo):
@@ -167,11 +167,11 @@ def ajout(tablo):
 
 ##################################### deplacement vers la gauche
 '''
-    L'ensemble de ces fonctions vont permettre de se déplacer à gauche lorsque nous cliquons z et le button entrer.
+    L'ensemble de ces fonctions vont permettre de se déplacer à gauche lorsque nous cliquons q et le button entrer.
 '''
 def gauche(n,ligne):
     '''
-        Nous créons une liste qui va prendre les valeurs non nul d'une liste donner en argument
+        Nous créons une liste qui va prendre les valeurs non nulles d'une liste donnée en argument
         et on va le compléter avec des 0. 
         Exemple : si on a [2,0,4,0] ça renvoie [2,4,0,0]
     '''
@@ -185,10 +185,10 @@ def gauche(n,ligne):
 
 def simp(n,ligne):
     '''
-        Nous prenons une liste, nous mettons les valeurs non nul à gauche et nous la complètons avec des zéros.
+        Nous prenons une liste, nous mettons les valeurs non nulles à gauche et nous la complètons avec des zéros.
         Nous comparons de gauche à droite pour voir si nous avons pas la même valeur, si c'est le cas nous multiplions par
-        2 celle qui se trouve à gauche parmi les 2 valeurs comparé et nous mettons 0 pour celle qui se trouver à gauche.
-        Et pour finir, nous met les valeurs non nul à gauche et nous la complètons avec des zéros. 
+        2 celle qui se trouve à gauche parmi les 2 valeurs comparées et nous mettons 0 pour celle qui se trouver à droite.
+        Et pour finir, nous mettons les valeurs non nulles à gauche et nous la complétons avec des zéros. 
         Exemple: [4,2,0,2,0,4] -> [4,2,2,4,0,0] -> [4,4,0,4,0,0] -> [4,4,4,0,0,0] 
 
     '''
@@ -204,7 +204,7 @@ def simp(n,ligne):
 
 def deplacement_gauche(n,tablo):
     '''
-        Nous fesons exactement la même chose que dans la fonction vu précèdement, ligne par ligne du tableau.
+        Nous faisons exactement la même chose que dans la fonction vu précédement, ligne par ligne du tableau.
     '''
     for i in range(n):
         tablo[i]=simp(n,tablo[i])
@@ -212,7 +212,7 @@ def deplacement_gauche(n,tablo):
 
 #######################################  deplacement vers la droite
 '''
-    L'ensemble de ces fonctions vont permettre de se deplacer à droite lorsque nous cliquons sur la flèche droite.
+    Cette fonction va permettre de se déplacer à droite lorsque nous cliquons d et le button entrer.
 '''
 def deplacement_droite(n,tablo):
     for i in range(n):
@@ -224,11 +224,11 @@ def deplacement_droite(n,tablo):
 
 ######################################  deplacement vers le haut
 '''
-    L'ensemble de ces fonctions vont permettre de se deplacer en haut lorsque nous cliqueons sur la flèche haut.
+    Cette fonction va permettre de se déplacer vers le haut lorsque nous cliquons z et le button entrer.
 '''
 def transformation(n,tablo):
     '''
-        cette fonction renvoie la tanslation de la matrice mit en argument.
+        cette fonction renvoie la tanslation de la matrice mise en argument.
     '''
     l=[]
     for i in range(n):
@@ -244,7 +244,7 @@ def deplacement_haut(n,tablo):
 
 #####################################   deplacement vers le bas
 '''
-    L'ensemble de ces fonctions vont permettre de se deplacer en bas lorsque nous cliquons sur la fleche bas.
+    Cette fonction va permettre de se déplacer vers le bas lorsque nous cliquons s et le button entrer.
 '''
 def deplacement_bas(n,tablo):
     tablo = transformation(n,tablo)
@@ -256,7 +256,7 @@ def deplacement_bas(n,tablo):
 
 def victoire(n,tablo):
     '''
-        Renvoie 'vous avez gg' lorsque nous retrouvons un 2048 dans le tableau
+        Renvoie 'vous avez gg' lorsque nous retrouvons un 2048 dans le tableau.
     '''
     a=0
     for i in range(n):
@@ -271,7 +271,7 @@ def victoire(n,tablo):
 
 ####################################  défaite
 '''
-    La fonction défaite permet de savoir si on a perdu ou pas,
+    La fonction défaite permet de savoir si on a perdu ou pas.
 '''
 def defaite(n,tablo):
     a=0
@@ -300,12 +300,13 @@ def defaite(n,tablo):
 ###################################### Enregistrement et quitter
 
 '''
-    La fonction 'enregistrer2' est utilisée lorsque nous cliquons sur le bouton 'quitter sans sauvegarder'
-    et lorsque nous perdons une partie. 
+    La fonction 'enregistrer' est utilisée lorsque nous cliquons sur 'espace' -> entrer -> 2 -> entrer. 
+    Elle permet d'enregistrer la parie avant de quitter.
 '''
 def enregistrer(n,tablo):
     '''
         Nous enregistrons la valeur du score dans le fichier 'score.txt'.
+        Nous enregistrons la valeur de n,la valeur de v, le score et le tableau dans le fichier 'tablo_memoire.txt'.
     '''
     with open("score.txt",mode='a',encoding='utf8') as g:
         g.write('\n')
@@ -331,7 +332,7 @@ def enregistrer(n,tablo):
 
 ################################ choix continuer
 '''
-    permet de chosir si on continue ou pas après avoir atteint la valeur 2048.
+    Cette fonction permet de chosir si on continue ou pas après avoir atteint la valeur 2048.
 '''
 def continu(e,n,tablo):
     while e!='1' and e!='2' and e!='3':
@@ -362,15 +363,15 @@ def direction(n,tablo):
         - nous cliquons sur espace pour pouvoir:
             - enregister et quitter.
             - quitter sans enregistrer.
-        Nous comparons le nouveau tableau avec le tableau mit en mémoire:
+        Nous comparons le nouveau tableau avec le tableau mis en mémoire:
         - Si c'est pas le même, nous remplaçons un 0 par un 2 ou 4.
         Nous regardons si nous avons gagner c'est a dire si on a un 2048,
         si c'est le cas on a 3 choix:
         - enregistrer et quitter 
         - quitter sans enregistrer
-        - continuer: c'est ici que le v intervient et empeche une repetion de demande pour savoir si nous voulons continer ou pas.
-          En effet une fois que nous décidons de continuer pour arreter il faut que nous cliquons sur la touche espace.
-        Nous regardons si nous avons perdu c'est à dire si on ne peu plus se deplacer,
+        - continuer: c'est ici que le v intervient et empêche une repétition de demande pour savoir si nous voulons continer ou pas.
+          En effet une fois que nous décidons de continuer pour arrêter il faut que nous cliquons sur la touche espace.
+        Nous regardons si nous avons perdu c'est-à-dire si on ne peut plus se déplacer,
         si c'est le cas le score et enregistrer dans le fichier 'score.txt'.  
         
     '''
