@@ -1,5 +1,5 @@
 '''
-    Nous importons tous les éléments de Tkinder, pour l'interface graphique.
+    Nous importons tous les éléments de Tkinter, pour l'interface graphique.
     Nous importons random pour utiliser la fonction choice qui va nous permettre de faire des choix de manière aléatoire.
 
 '''
@@ -65,7 +65,7 @@ def ajout(tablo):
 ################### transformer le txt en liste
 
 '''
-    La fonction 'read_file' est un élément important pour importer le dernier tableau enregistrer dans un fichier et aussi pour trouver le meilleur score .   
+    La fonction 'read_file' est un élément important pour importer le dernier tableau enregistré dans un fichier et aussi pour trouver le meilleur score .   
 '''
 
 def read_file(filename):
@@ -106,15 +106,15 @@ def meilleur_score(filename):
 
 ########## debut
 '''
-    La fonction 'choixmode' sera celle qui sera appellée en premier au lancement du jeu, elle va permettre de choisir le mode de jeu.  
+    La fonction 'choixmode' sera celle qui sera appelée en première au lancement du jeu, elle va permettre de choisir le mode de jeu.  
 '''
 def choixmode():
     '''
 
-        Nous appelons tous les variables globales,
+        Nous appelons toutes les variables globales,
         Nous supprimons tous les éléments affichés ( cette partie est importante lorsque nous avons un jeu en cours 
         et qu'on clique 'menu' pour revenir au choix du mode, sans cette partie nous allons superposer la partie précédente au dessus de la nouvelle ).
-        Après avoir supprimé les éléments afficher si cela existe, nous créons 3 boutons:
+        Après avoir supprimé les éléments affichés s'ils existent, nous créons 3 boutons:
         - le bouton '4x4' nous renvoie vers la fonction debut4x4 lorsque nous cliquons dessus.
         - le bouton '5x5' nous renvoie vers la fonction debut5x5 lorsque nous cliquons dessus.
         - le bouton 'Reprendre la partie précédente' nous renvoie vers la fonctions 'partie_precedent' lorsque nous cliquons dessus.
@@ -154,7 +154,7 @@ def choixmode():
 
 def debut4x4():
     '''
-        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après qu'on a cliqué 'menu'.
+        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après que nous ayons cliqué 'menu'.
         Nous detruisons le canevas1 pour enlever l'affichage des boutons du choix de mode.
         Nous créons le canavas1 et le canevas, pour ajouter du textes dans le canevas1.
         Nous créons s1 et s2 pour mettre le score et le meilleur score. Nous créons de cette manière pour 
@@ -212,16 +212,16 @@ def debut4x4():
 
 def debut5x5():
     '''
-        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après que nous avons cliqué 'menu'.
+        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après que nous ayons cliqué 'menu'.
         Nous détruisons le canevas1 pour enlever l'affichage des boutons du choix de mode.
-        Nous créons le canavas1 et le canevas, pour ajouter du textes dans le canevas1.
+        Nous créons le canavas1 et le canevas, pour ajouter du texte dans le canevas1.
         Nous créons s1 et s2 pour mettre le score et le meilleur score. Nous créons de cette maniere pour 
         pouvoir le supprimer et le réécrire plus facilement après chaque déplacement.
         Nous créons 3 boutons:
         - enregistrer et quitter en bas à gauche. 
         - quitter sans enregistrer en bas à droite.
         - menu pour revenir au choix de mode.
-        Nous mettons à jour la valeur de n qui vaut 4 et le tableau qui est un tableau de taille 5x5 avec que des zéros.
+        Nous mettons à jour la valeur de n qui vaut 5 et le tableau qui est un tableau de taille 5x5 avec que des zéros.
         Nous mettons deux valeurs dans le tableau.
         Nous renvoyons vers la fonction 'rectangle2'.
     '''
@@ -267,13 +267,13 @@ def debut5x5():
 '''
 def partie_precedent():
     '''
-        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après que nous avons cliqué 'menu'.
+        Nous mettons 'score = 0' car elle permet de remettre le score à 0 après que nous ayons cliqué 'menu'.
         Nous allons chercher la dernière ligne du fichier 'tablo_memoire.txt', 
         ceci va nous permettre de retrouver:
         - la valeur de n, qui va nous permettre de savoir la taille du tableau
-        - la valeur de v, pour ce programme la valeur de v ne sert a rien, nous n'avons pas besoin de lui pour le programme sur le terminal
-        - la valeur du score de la  partie enregistrer
-        - le tableau de la partie enregistrer
+        - la valeur de v, pour ce programme la valeur de v ne sert à rien, nous n'avons besoin d'elle que pour le programme sur le terminal
+        - la valeur du score de la  partie enregistrée
+        - le tableau de la partie enregistrée
         Nous détruisons le canevas1 pour enlever l'affichage des boutons du choix de mode.
         Nous créons le canavas1 et le canevas, pour ajouter du textes dans le canevas1.
         Nous créons s1 et s2 pour mettre le score et le meilleur score. Nous créons de cette manière pour 
@@ -345,12 +345,12 @@ ltx1=[75,225,378.25,525]
 lty1=[81.75,225,375,525]
 
 '''
-    La fonction 'retangle1' va permettre l'affichage de la partie 4x4.
+    La fonction 'retangle1' va permettre l'affichage d'un tableau 4x4.
 '''
 def rectangle1(n,tablo):
     '''
         Nous supprimons le texte qui renvoie la valeur du score et celui du meilleur score.
-        Nous recréons le texte qui va permettre d'afficher le score et le meilleur score, après les avoir comparés:
+        Nous recréons le texte qui va permettre d'afficher le score et le meilleur score, après les avoir comparé:
         - si le score est plus grand que le meilleur score alors dans les deux textes, nous allons mettre la valeur du score.
         - si le score est plus petit que le meilleur score alors dans s2 nous renvoyons le meilleur score du fichier 'score.txt' et 
         dans s1 nous renvoyons le score.
@@ -394,12 +394,12 @@ ltx2=[60,180,300,420,540]
 lty2=[60,180,300,420,540]
 
 '''
-    La fonction 'rectangle2' va permettre l'affichage de la partie 5x5.
+    La fonction 'rectangle2' va permettre l'affichage d'un tableau 5x5.
 '''
 
 def rectangle2(n,tablo):
     '''
-        Nous fesons exactement la même chose que dans 'rectangle1'  mais pour n=5. 
+        Nous faisons exactement la même chose que dans 'rectangle1'  mais pour n=5. 
     '''
     global canvas1
     global s1
@@ -559,8 +559,8 @@ def defaite(n,tablo):
 '''
 def gauche(n,ligne):
     '''
-        Nous créons une liste qui va prendre les valeurs non nul d'une liste donner en argument
-        et on va le compléter avec des 0. 
+        Nous créons une liste qui va prendre les valeurs non nulles d'une liste donnée en argument
+        et on va la compléter avec des 0. 
         Exemple : si on a [2,0,4,0] ça renvoie [2,4,0,0]
     '''
     l=[]
@@ -573,10 +573,10 @@ def gauche(n,ligne):
 
 def simp(n,ligne):
     '''
-        Nous prenons une liste, nous mettons les valeurs non nul à gauche et nous la complètons avec des zéros.
+        Nous prenons une liste, nous mettons les valeurs non nulles à gauche et nous la complétons avec des zéros.
         Nous comparons de gauche à droite pour voir si nous avons pas la même valeur, si c'est le cas nous multiplions par
-        2 celle qui se trouve à gauche parmi les 2 valeurs comparé et nous mettons 0 pour celle qui se trouver à gauche.
-        Et pour finir, nous met les valeurs non nul à gauche et nous la complètons avec des zéros. 
+        2 celle qui se trouve à gauche parmi les 2 valeurs comparées et nous mettons 0 pour celle qui se trouve à droite.
+        Et pour finir, nous mettons les valeurs non nulles à gauche et nous la complétons avec des zéros. 
         Exemple: [4,2,0,2,0,4] -> [4,2,2,4,0,0] -> [4,4,0,4,0,0] -> [4,4,4,0,0,0] 
 
     '''
@@ -591,7 +591,7 @@ def simp(n,ligne):
 
 def deplacement_gauche(n,tablo):
     '''
-        Nous fesons exactement la même chose que dans la fonction vu précèdement, ligne par ligne du tableau.
+        Nous faisons exactement la même chose que dans la fonction vu précédemment, ligne par ligne du tableau.
     '''
     for i in range(n):
         tablo[i]=simp(n,tablo[i])
@@ -600,9 +600,9 @@ def deplacement_gauche(n,tablo):
 def deplacement_gauche_clavier(event):
     '''
         Nous mettons en mémoire le tableau.
-        Nous appliquons le deplacement gauche au tableau.
-        Nous comparons avec celle que nous avons mit en mémoire:
-        - si c'est pas le même, nous rajoutons une valeur parmi les 0 et nous renvouons vers les fonctions 'rectangle1' ou 'rectangle2' 
+        Nous appliquons le déplacement gauche au tableau.
+        Nous comparons avec celle que nous avons mis en mémoire:
+        - si c'est pas le même, nous rajoutons une valeur parmi les 0 et nous renvoyons vers les fonctions 'rectangle1' ou 'rectangle2' 
         en fonction de la valeur de n.
         - si c'est le même, nous renvoyons vers les fonctions 'rectangle1' ou 'rectangle2' en fonction de n. 
 
@@ -644,12 +644,12 @@ def deplacement_droit_clavier(event):
 
 ######################################  déplacement vers le haut
 '''
-    L'ensemble de ces fonctions vont permettre de se deplacer en haut lorsque nous cliqueons sur la flèche haut.
+    L'ensemble de ces fonctions vont permettre de se déplacer en haut lorsque nous cliquons sur la flèche haut.
 '''
 
 def transformation(n,tablo):
     '''
-        cette fonction renvoie la tanslation de la matrice mit en argument.
+        cette fonction renvoie la tanslation de la matrice mise en argument.
     '''
     l=[]
     for i in range(n):
@@ -676,7 +676,7 @@ def deplacement_haut_clavier(event):
 
 #####################################   déplacement vers le bas
 '''
-    L'ensemble de ces fonctions vont permettre de se deplacer en bas lorsque nous cliquons sur la fleche bas.
+    L'ensemble de ces fonctions vont permettre de se déplacer en bas lorsque nous cliquons sur la fleche bas.
 '''
 def deplacement_bas(n,tablo):
     tablo = transformation(n,tablo)
